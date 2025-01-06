@@ -4,6 +4,8 @@ import "./styles/index.css";
 import App from "./routes/App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/Home.jsx";
+import { Provider } from "react-redux";
+import videoStore from "./store/index.js";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={videoStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );
