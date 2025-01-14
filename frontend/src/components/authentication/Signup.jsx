@@ -41,7 +41,7 @@ const Signup = () => {
       formData.append("coverImage", coverImage);
     }
     try {
-      const response = await fetch("/api/v1/users/register", {
+      const response = await fetch("/api/users/register", {
         method: "POST",
         body: formData,
       });
